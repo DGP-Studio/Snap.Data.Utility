@@ -8,7 +8,7 @@ namespace Snap.Data.Utility
         private const char WhiteSpace = ' ';
         private readonly Dictionary<string, string?> options = new();
 
-        public CommandLineBuilder AppendIf(bool condition, string name, object? value = null)
+        public CommandLineBuilder AppendIf(string name, bool condition, object? value = null)
         {
             return condition ? Append(name, value) : this;
         }
