@@ -13,4 +13,8 @@
     <None Remove="README.md" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Snap.Reflection\Snap.Reflection.csproj" />
+  </ItemGroup>
+
 </Project>
