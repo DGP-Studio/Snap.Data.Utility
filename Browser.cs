@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Snap.Data.Utility
 {
-    public static class Browser 
+    public static class Browser
     {
         public static void Open(string url, Action<Exception>? failAction = null)
         {
@@ -13,7 +13,7 @@ namespace Snap.Data.Utility
                 ProcessStartInfo processInfo = new(targetUri.AbsoluteUri) { UseShellExecute = true };
                 Process.Start(processInfo);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 failAction?.Invoke(ex);
             }
