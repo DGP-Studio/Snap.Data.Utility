@@ -34,16 +34,16 @@ namespace Snap.Data.Utility
         }
     }
 
-    public class FileExplorer 
+    public class FileExplorer
     {
         public static void Open(string folder, Action<Exception>? failAction = null)
         {
             try
             {
-                ProcessStartInfo processInfo = new("explorer.exe") 
-                { 
-                    Arguments = folder, 
-                    UseShellExecute = true 
+                ProcessStartInfo processInfo = new("explorer.exe")
+                {
+                    Arguments = folder,
+                    UseShellExecute = true
                 };
                 Process.Start(processInfo);
             }
