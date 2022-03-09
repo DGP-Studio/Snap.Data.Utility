@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Snap.Data.Utility
 {
-    public static partial class ObjectToChildExtensions
+    public static partial class ObjectExtensions
     {
         /// <summary>
         /// 将父类对象的属性复制到新创建的子类实例
@@ -30,6 +30,19 @@ namespace Snap.Data.Utility
                 return child;
             }
             return default;
+        }
+
+        /// <summary>
+        /// <see cref="Nullable{T}"/> To Tuple
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="nullable"></param>
+        /// <param name="hasValue"></param>
+        /// <param name="value"></param>
+        public static void Deconstruct<T>(this T? nullable, out bool hasValue, out T value) where T : struct
+        {
+            hasValue = nullable.HasValue;
+            value = nullable.GetValueOrDefault();
         }
     }
 }

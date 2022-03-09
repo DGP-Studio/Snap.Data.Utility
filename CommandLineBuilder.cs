@@ -27,14 +27,14 @@ namespace Snap.Data.Utility
         public override string ToString()
         {
             StringBuilder s = new();
-            foreach (KeyValuePair<string, string?> option in options)
+            foreach ((string key, string? value) in options)
             {
                 s.Append(WhiteSpace);
-                s.Append(option.Key);
-                if (!string.IsNullOrEmpty(option.Value))
+                s.Append(key);
+                if (!string.IsNullOrEmpty(value))
                 {
                     s.Append(WhiteSpace);
-                    s.Append(option.Value);
+                    s.Append(value);
                 }
             }
             return s.ToString();
