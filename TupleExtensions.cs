@@ -1,5 +1,4 @@
-﻿using Snap.Data.Primitive;
-using System;
+﻿using System;
 
 namespace Snap.Data.Utility
 {
