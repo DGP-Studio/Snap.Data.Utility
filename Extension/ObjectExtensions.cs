@@ -2,9 +2,9 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Snap.Data.Utility
+namespace Snap.Data.Utility.Extension
 {
-    public static partial class ObjectExtensions
+    public static class ObjectExtensions
     {
         /// <summary>
         /// 将父类对象的属性复制到新创建的子类实例

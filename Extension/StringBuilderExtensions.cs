@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Snap.Data.Utility
+namespace Snap.Data.Utility.Extension
 {
     public static class StringBuilderExtensions
     {
