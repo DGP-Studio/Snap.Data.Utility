@@ -12,7 +12,7 @@ namespace Snap.Data.Utility
         {
             if (item != null)
             {
-                if (!ContainsKey(item))
+                if (!this.ContainsKey(item))
                 {
                     this[item] = 0;
                 }

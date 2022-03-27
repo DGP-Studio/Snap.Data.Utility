@@ -10,24 +10,24 @@ namespace Snap.Data.Utility
 
         public CommandLineBuilder AppendIf(string name, bool condition, object? value = null)
         {
-            return condition ? Append(name, value) : this;
+            return condition ? this.Append(name, value) : this;
         }
 
         public CommandLineBuilder Append(string name, object? value = null)
         {
-            options.Add(name, value?.ToString());
+            this.options.Add(name, value?.ToString());
             return this;
         }
 
         public string Build()
         {
-            return ToString();
+            return this.ToString();
         }
 
         public override string ToString()
         {
             StringBuilder s = new();
-            foreach ((string key, string? value) in options)
+            foreach ((string key, string? value) in this.options)
             {
                 s.Append(WhiteSpace);
                 s.Append(key);

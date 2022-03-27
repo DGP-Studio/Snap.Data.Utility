@@ -28,7 +28,7 @@ namespace Snap.Data.Utility.Extension
 
             public void Dispose()
             {
-                supportInitialize.EndInit();
+                this.supportInitialize.EndInit();
             }
         }
     }
