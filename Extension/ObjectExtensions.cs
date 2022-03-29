@@ -9,6 +9,7 @@ namespace Snap.Data.Utility.Extension
         /// <summary>
         /// 将父类对象的属性复制到新创建的子类实例
         /// 使用此方法时 <typeparamref name="TParent"/> 与 <typeparamref name="TChild"/> 中不能存在类索引器 this[]
+        /// <para/>
         /// 会忽略带有 <see cref="IgnoreInToChildAttribute"/> 特性的属性
         /// </summary>
         /// <typeparam name="TParent"></typeparam>
