@@ -4,6 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Snap.Data.Utility.Extension
 {
+    /// <summary>
+    /// 扩展方法
+    /// </summary>
     public static class ObjectExtensions
     {
         /// <summary>
@@ -12,13 +15,14 @@ namespace Snap.Data.Utility.Extension
         /// <para/>
         /// 会忽略带有 <see cref="IgnoreInToChildAttribute"/> 特性的属性
         /// </summary>
-        /// <typeparam name="TParent"></typeparam>
-        /// <typeparam name="TChild"></typeparam>
-        /// <param name="parent"></param>
+        /// <typeparam name="TParent">父类型</typeparam>
+        /// <typeparam name="TChild">子类型</typeparam>
+        /// <param name="parent">父对象</param>
         /// <param name="additionalModifier">拷贝完成后执行的额外操作</param>
-        /// <returns></returns>
+        /// <returns>新的子对象实例</returns>
         [return: NotNullIfNotNull("parent")]
-        public static TChild? ToChild<TParent, TChild>(this TParent parent, Action<TChild>? additionalModifier = null) where TChild : TParent, new()
+        public static TChild? ToChild<TParent, TChild>(this TParent parent, Action<TChild>? additionalModifier = null)
+            where TChild : TParent, new()
         {
             if (parent != null)
             {
@@ -30,6 +34,7 @@ namespace Snap.Data.Utility.Extension
                 additionalModifier?.Invoke(child);
                 return child;
             }
+
             return default;
         }
     }

@@ -2,19 +2,22 @@
 
 namespace Snap.Data.Utility.Extension
 {
+    /// <summary>
+    /// 元组扩展
+    /// </summary>
     public static class TupleExtensions
     {
         /// <summary>
         /// 将二项元组转化为一个单项的字典
         /// </summary>
-        /// <typeparam name="T1"></typeparam>
-        /// <typeparam name="T2"></typeparam>
-        /// <param name="tuple"></param>
-        /// <returns></returns>
-        public static IDictionary<T1, T2> AsDictionary<T1, T2>(this (T1 Key, T2 Value) tuple)
-            where T1 : notnull
+        /// <typeparam name="TKey">键类型</typeparam>
+        /// <typeparam name="TValue">值类型</typeparam>
+        /// <param name="tuple">元组</param>
+        /// <returns>仅包含一个项的字典</returns>
+        public static IDictionary<TKey, TValue> AsDictionary<TKey, TValue>(this (TKey Key, TValue Value) tuple)
+            where TKey : notnull
         {
-            return new Dictionary<T1, T2>(1) { { tuple.Key, tuple.Value } };
+            return new Dictionary<TKey, TValue>(1) { { tuple.Key, tuple.Value } };
         }
     }
 }

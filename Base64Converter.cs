@@ -6,14 +6,14 @@ namespace Snap.Data.Utility
     /// <summary>
     /// Base64 字符串转换器
     /// </summary>
-    public class Base64Converter
+    public abstract class Base64Converter
     {
         /// <summary>
         /// 解码
         /// </summary>
-        /// <param name="encoding"></param>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="encoding">编码类型</param>
+        /// <param name="input">输入</param>
+        /// <returns>输出</returns>
         public static string Base64Decode(Encoding encoding, string input)
         {
             byte[] bytes = Convert.FromBase64String(input);
@@ -23,9 +23,9 @@ namespace Snap.Data.Utility
         /// <summary>
         /// 编码
         /// </summary>
-        /// <param name="encoding"></param>
-        /// <param name="base64"></param>
-        /// <returns></returns>
+        /// <param name="encoding">编码类型</param>
+        /// <param name="base64">输入</param>
+        /// <returns>输出</returns>
         public static string Base64Encode(Encoding encoding, string base64)
         {
             byte[] bytes = encoding.GetBytes(base64);
