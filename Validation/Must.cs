@@ -43,7 +43,7 @@ namespace Snap
             // Keep these two as separate lines of code, so the debugger can come in during the assert dialog
             // that the exception's constructor displays, and the debugger can then be made to skip the throw
             // in order to continue the investigation.
-            var exception = new NotSupportedException("该行为不应发生，请联系开发者进一步确认");
+            NotSupportedException exception = new("该行为不应发生，请联系开发者进一步确认");
             bool proceed = true; // allows debuggers to skip the throw statement
             if (proceed)
             {
@@ -70,7 +70,7 @@ namespace Snap
             // Keep these two as separate lines of code, so the debugger can come in during the assert dialog
             // that the exception's constructor displays, and the debugger can then be made to skip the throw
             // in order to continue the investigation.
-            var exception = new NotSupportedException("该行为不应发生，请联系开发者进一步确认");
+            NotSupportedException exception = new("该行为不应发生，请联系开发者进一步确认");
             bool proceed = true; // allows debuggers to skip the throw statement
             if (proceed)
             {
