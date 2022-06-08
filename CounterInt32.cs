@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Snap.Data.Utility
 {
@@ -7,7 +8,7 @@ namespace Snap.Data.Utility
     /// </summary>
     /// <typeparam name="TItem">待计数的类型</typeparam>
     public class CounterInt32<TItem> : Dictionary<TItem, int>
-        where TItem : notnull
+        where TItem : notnull, IEquatable<TItem>
     {
         /// <summary>
         /// 增加计数器
